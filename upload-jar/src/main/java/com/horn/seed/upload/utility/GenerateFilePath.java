@@ -12,8 +12,7 @@ public final class GenerateFilePath {
 	}
 
 	public static String generatePathFromFileName(String fileName) {
-
 		/* Have to improve this way to generating file path */
-		return fileName.replace('-', '\\');
+		return fileName.replaceAll("-|:", "\\\\");
 	}
 }
