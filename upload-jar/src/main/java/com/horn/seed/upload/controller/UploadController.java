@@ -24,7 +24,7 @@ public class UploadController {
 
 	@PostMapping(value = "/upload" /* , headers = ("Content-Type=image/*") */)
 	public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile multipartFile) throws IOException {
-		uploadImageService.uploadImage(multipartFile.getBytes());
-		return new ResponseEntity<String>(HttpStatus.OK);
+		String id = uploadImageService.uploadImage(multipartFile.getInputStream());
+		return new ResponseEntity<String>(id ,HttpStatus.OK);
 	}
 }

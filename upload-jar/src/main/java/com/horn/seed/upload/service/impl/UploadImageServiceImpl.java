@@ -1,14 +1,13 @@
 package com.horn.seed.upload.service.impl;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.InputStream;
 
-import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.horn.seed.upload.repository.UploadImageRepository;
 import com.horn.seed.upload.service.UploadImageService;
 import com.horn.seed.upload.utility.FileNameGenerator;
-import com.horn.seed.upload.utility.GenerateFilePath;
 
 /**
  * @author Abhishek
@@ -18,11 +17,15 @@ import com.horn.seed.upload.utility.GenerateFilePath;
 @Service
 public class UploadImageServiceImpl implements UploadImageService {
 
+	@Autowired
+	private UploadImageRepository uploadImageRepository;
+
 	@Override
-	public void uploadImage(byte[] inputStream) {
+	public String uploadImage(InputStream inputStream) {
 		String fileName = FileNameGenerator.generateFileName();
 		/* Store fileName to database */
-		String filePath = GenerateFilePath.generatePathFromFileName(fileName);
+		//Removing this way of saving file and using mongoDB's GridFs
+		/*String filePath = GenerateFilePath.generatePathFromFileName(fileName);
 		try {
 			String fullFilePath = String.format("E:\\%s.%s", filePath, "jpeg");
 			FileUtils.writeByteArrayToFile(new File(fullFilePath), inputStream);
@@ -30,6 +33,7 @@ public class UploadImageServiceImpl implements UploadImageService {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
+		return uploadImageRepository.saveImage(inputStream, fileName);
 	}
 }
