@@ -12,6 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.horn.seed.upload.service.UploadImageService;
 
+import io.swagger.annotations.Api;
+
 /**
  * @author Abhishek
  *
@@ -22,6 +24,7 @@ public class UploadController {
 	@Autowired
 	private UploadImageService uploadImageService;
 
+	
 	@PostMapping(value = "/upload" /* , headers = ("Content-Type=image/*") */)
 	public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile multipartFile) throws IOException {
 		String id = uploadImageService.uploadImage(multipartFile.getInputStream());

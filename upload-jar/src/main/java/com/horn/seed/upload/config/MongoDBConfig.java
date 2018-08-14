@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
 import com.mongodb.MongoClient;
 
 /**
@@ -15,7 +15,6 @@ import com.mongodb.MongoClient;
  */
 
 @Configuration
-//@EnableMongoRepositories(basePackages = "com.horn.seed.upload.repository.impl")
 public class MongoDBConfig extends AbstractMongoConfiguration {
 
 	@Value(value = "spring.data.mongodb.host")

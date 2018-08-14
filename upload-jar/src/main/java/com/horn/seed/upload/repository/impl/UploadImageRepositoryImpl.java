@@ -21,7 +21,6 @@ public class UploadImageRepositoryImpl implements UploadImageRepository {
 	
 	@Override
 	public String saveImage(InputStream inputStream, String fileName) {
-		// TODO Auto-generated method stub
 		ObjectId objectId = gridFsTemplate.store(inputStream, fileName);
 		return objectId.toHexString();
 	}
