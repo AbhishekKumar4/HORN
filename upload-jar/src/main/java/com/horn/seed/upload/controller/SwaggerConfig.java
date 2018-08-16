@@ -1,4 +1,4 @@
-package com.horn.seed.upload.controller;
+	package com.horn.seed.upload.controller;
 
 import java.util.ArrayList;
 
@@ -20,8 +20,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @EnableWebMvc
 public class SwaggerConfig extends WebMvcConfigurerAdapter {
+	
 	@Override
-
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
 		registry.addResourceHandler("swagger-ui.html")
@@ -39,8 +39,8 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
 	  public Docket api() {
 	    return new Docket(DocumentationType.SWAGGER_2)
 	      .select()
-	      .apis(RequestHandlerSelectors.basePackage("com.horn.seed.upload.controller"))
-	      .paths(PathSelectors.regex("/upload-jar.*|/legacy.*"))
+	      .apis(RequestHandlerSelectors.any())
+	      .paths(PathSelectors.any())
 	      .build()
 	      .apiInfo(apiInfo());
 	  }
