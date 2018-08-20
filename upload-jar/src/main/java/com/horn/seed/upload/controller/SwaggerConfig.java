@@ -8,6 +8,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.google.common.base.Predicates;
+
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -40,7 +42,7 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
 	    return new Docket(DocumentationType.SWAGGER_2)
 	      .select()
 	      .apis(RequestHandlerSelectors.any())
-	      .paths(PathSelectors.any())
+	      .paths(PathSelectors.any()).paths(Predicates.not(PathSelectors.regex("/error")))
 	      .build()
 	      .apiInfo(apiInfo());
 	  }
