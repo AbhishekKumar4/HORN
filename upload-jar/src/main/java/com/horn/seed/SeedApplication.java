@@ -9,9 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.horn.seed.upload.service.impl", "com.horn.seed.upload.controller", "com.horn.seed.upload.repository"})
+@ComponentScan(basePackages = {"com.horn.seed.upload.config", "com.horn.seed.upload"})
 public class SeedApplication {
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(SeedApplication.class, args);
 	}

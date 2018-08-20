@@ -17,13 +17,13 @@ import com.mongodb.MongoClient;
 @Configuration
 public class MongoDBConfig extends AbstractMongoConfiguration {
 
-	@Value(value = "spring.data.mongodb.host")
+	@Value("${spring.data.mongodb.host}")
 	private String host;
 
-	@Value(value = "spring.data.mongodb.database")
+	@Value("${spring.data.mongodb.database}")
 	private String dbName;
 
-	@Value(value = "spring.data.mongodb.port")
+	@Value("${spring.data.mongodb.port}")
 	private int port;
 	
 	@Override

@@ -1,4 +1,4 @@
-	package com.horn.seed.upload.controller;
+package com.horn.seed.upload.config;
 
 import java.util.ArrayList;
 
@@ -50,14 +50,10 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
 	 
 
 	  private ApiInfo apiInfo() {
-	    ApiInfo apiInfo = new ApiInfo("XYZ",
-	      "XYZZ", "1.0",
-	      "urn:tos", ApiInfo.DEFAULT_CONTACT, "com.abhi", "", new ArrayList<>());
+	    ApiInfo apiInfo = new ApiInfo("Upload API",
+	      "Api for uploading post images", "1.0",
+	      "urn:tos", ApiInfo.DEFAULT_CONTACT, "com.horn.seed.upload", "", new ArrayList<>());
 	    return apiInfo;
 	  }
-/*		private ApiInfo apiInfo() {
-			ApiInfo apiInfo = new ApiInfo("SaurzCode API", "API for Saurzcode", "Saurzcode API terms of service",
-					"mail2saurzcode@gmail.com", "Saurzcode API Licence Type", "Saurzcode API License URL");
-			return apiInfo;
-		}*/
+
 }
