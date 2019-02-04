@@ -17,19 +17,24 @@ import com.mongodb.MongoClient;
 @Configuration
 public class MongoDBConfig extends AbstractMongoConfiguration {
 
-	@Value("${spring.data.mongodb.host}")
-	private String host;
+/*	@Value("${spring.data.mongodb.host}")
+	private String host;*/
 
 	@Value("${spring.data.mongodb.database}")
 	private String dbName;
 
-	@Value("${spring.data.mongodb.port}")
-	private int port;
+/*	@Value("${spring.data.mongodb.port}")
+	private int port;*/
+	
+	@Value("${spring.data.mongodb.uri}")
+	private String uri;
 	
 	@Override
 	@Bean
 	public MongoClient mongoClient() {
-		return new MongoClient(host, port);
+		//return new MongoClient(host, port);
+		return new MongoClient(uri);
+		
 	}
 
 	@Override
