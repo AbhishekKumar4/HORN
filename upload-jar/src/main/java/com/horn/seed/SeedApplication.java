@@ -20,6 +20,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author Abhishek
  *
  */
+
+@SuppressWarnings("deprecation")
 @SpringBootApplication
 @EnableSwagger2
 @EnableWebMvc
