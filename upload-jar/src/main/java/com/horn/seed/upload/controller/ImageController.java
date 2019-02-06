@@ -1,7 +1,6 @@
 package com.horn.seed.upload.controller;
 
 import java.io.IOException;
-import java.net.URL;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.horn.seed.model.ImageDownload;
 import com.horn.seed.model.ImageUpload;
 import com.horn.seed.upload.service.ImageService;
 
