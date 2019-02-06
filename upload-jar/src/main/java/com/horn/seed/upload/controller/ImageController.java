@@ -1,6 +1,7 @@
 package com.horn.seed.upload.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.horn.seed.model.ImageUpload;
 import com.horn.seed.upload.service.ImageService;
+import com.mongodb.client.gridfs.model.GridFSFile;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -55,7 +57,21 @@ public class ImageController {
 	@GetMapping(value = "/getImage")
 	public ResponseEntity<byte[]> getImage(@RequestParam("id") String id) throws IOException {
 		GridFsResource gridFsResource = imageService.getImage(id);
+		
 		byte[] media = IOUtils.toByteArray(gridFsResource.getInputStream());
 		return new ResponseEntity<byte[]>(media, HttpStatus.OK);
 	}
+	
+	@ApiOperation(value = "To Get All Images")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully uploaded"),
+			@ApiResponse(code = 401, message = "Not authorized to access the resource"),
+			@ApiResponse(code = 403, message = "Accessing the resource is forbidden"),
+			@ApiResponse(code = 404, message = "The resource is not found") })
+	@GetMapping(value = "/getAllImages")
+	public ResponseEntity<List<String>> getAllImages() throws IOException {
+		List<String> gridFsFileList = imageService.getAllImages();
+		return new ResponseEntity<List<String>>(gridFsFileList, HttpStatus.OK);
+	}
+	
+	
 }

@@ -1,6 +1,8 @@
 package com.horn.seed.upload.repository.impl;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,13 @@ public class ImageRepositoryImpl implements ImageRepository {
 		GridFSFile gridFSFile = gridFsTemplate.findOne(new Query(Criteria.where("_id").is(id)));
 		GridFSBucket gridFSBucket = GridFSBuckets.create(mongoDbFactory.getDb());
 		return new GridFsResource(gridFSFile, gridFSBucket.openDownloadStream(gridFSFile.getObjectId()));
+	}
+	
+	@Override
+	public List<GridFSFile> getAllImages() {
+		List<GridFSFile> fileList = new ArrayList<GridFSFile>();
+		gridFsTemplate.find(new Query()).into(fileList);
+		return fileList;
 	}
 
 }
