@@ -17,7 +17,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.horn.seed.model.ImageUpload;
 import com.horn.seed.upload.service.ImageService;
-import com.mongodb.client.gridfs.model.GridFSFile;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
