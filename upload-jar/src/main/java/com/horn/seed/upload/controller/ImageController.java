@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.gridfs.GridFsResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MimeTypeUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,6 +30,7 @@ import io.swagger.annotations.ApiResponses;
  * @author Abhishek
  *
  */
+@CrossOrigin
 @RestController
 @Api(value = "Upload", description = "Operations related to post image handling")
 public class ImageController {
