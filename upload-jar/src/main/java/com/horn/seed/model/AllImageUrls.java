@@ -1,17 +1,16 @@
 package com.horn.seed.model;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
-public class ImageDownload {
+public class AllImageUrls {
 
 	@Getter
 	@Setter
-	private String url;
-	
-	@Getter
-	@Setter
-	private String uri;
+	private List<String> urls;
+
 }

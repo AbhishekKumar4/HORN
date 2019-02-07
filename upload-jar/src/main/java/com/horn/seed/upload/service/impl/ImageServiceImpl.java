@@ -44,7 +44,6 @@ public class ImageServiceImpl implements ImageService {
 		String serverName = request.getServerName();
 		String serverPort = Integer.toString(request.getServerPort());
 		String url = scheme + "://" + serverName + ":" + serverPort + contextPath + "/getImage?id=";
-		System.out.println("Print Url ::" + url);
 		List<String> listofUrls = new ArrayList<String>();
 		List<GridFSFile> gridFSFileList = imageRepository.getAllImages();
 		gridFSFileList.forEach(gridfsfile -> {

@@ -1,7 +1,6 @@
 package com.horn.seed.upload.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.horn.seed.model.AllImageUrls;
 import com.horn.seed.model.ImageUpload;
 import com.horn.seed.upload.service.ImageService;
 
@@ -42,14 +42,15 @@ public class ImageController {
 			@ApiResponse(code = 403, message = "Accessing the resource is forbidden"),
 			@ApiResponse(code = 404, message = "The resource is not found") })
 	@PostMapping(value = "/upload" /* , headers = ("Content-Type=image/*") */ , consumes = {
-	"multipart/form-data" }, produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ImageUpload> uploadImage(@RequestParam("file") MultipartFile multipartFile) throws IOException {
+			"multipart/form-data" }, produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
+	public ResponseEntity<ImageUpload> uploadImage(@RequestParam("file") MultipartFile multipartFile)
+			throws IOException {
 		String id = imageService.uploadImage(multipartFile.getInputStream());
 		ImageUpload imageUpload = new ImageUpload();
 		imageUpload.setId(id);
 		return new ResponseEntity<ImageUpload>(imageUpload, HttpStatus.OK);
 	}
-	
+
 	@ApiOperation(value = "To Get Image")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully uploaded"),
 			@ApiResponse(code = 401, message = "Not authorized to access the resource"),
@@ -58,21 +59,21 @@ public class ImageController {
 	@GetMapping(value = "/getImage")
 	public ResponseEntity<byte[]> getImage(@RequestParam("id") String id) throws IOException {
 		GridFsResource gridFsResource = imageService.getImage(id);
-		
+
 		byte[] media = IOUtils.toByteArray(gridFsResource.getInputStream());
 		return new ResponseEntity<byte[]>(media, HttpStatus.OK);
 	}
-	
+
 	@ApiOperation(value = "To Get All Images")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully uploaded"),
 			@ApiResponse(code = 401, message = "Not authorized to access the resource"),
 			@ApiResponse(code = 403, message = "Accessing the resource is forbidden"),
 			@ApiResponse(code = 404, message = "The resource is not found") })
 	@GetMapping(value = "/getAllImages")
-	public ResponseEntity<List<String>> getAllImages(HttpServletRequest request) throws IOException {
-		List<String> gridFsFileList = imageService.getAllImages(request);
-		return new ResponseEntity<List<String>>(gridFsFileList, HttpStatus.OK);
+	public ResponseEntity<AllImageUrls> getAllImages(HttpServletRequest request) throws IOException {
+		AllImageUrls allImageUrls = new AllImageUrls();
+		allImageUrls.setUrls(imageService.getAllImages(request));
+		return new ResponseEntity<AllImageUrls>(allImageUrls, HttpStatus.OK);
 	}
-	
-	
+
 }
