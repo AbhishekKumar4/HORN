@@ -3,6 +3,8 @@ package com.horn.seed.upload.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.gridfs.GridFsResource;
@@ -67,8 +69,8 @@ public class ImageController {
 			@ApiResponse(code = 403, message = "Accessing the resource is forbidden"),
 			@ApiResponse(code = 404, message = "The resource is not found") })
 	@GetMapping(value = "/getAllImages")
-	public ResponseEntity<List<String>> getAllImages() throws IOException {
-		List<String> gridFsFileList = imageService.getAllImages();
+	public ResponseEntity<List<String>> getAllImages(HttpServletRequest request) throws IOException {
+		List<String> gridFsFileList = imageService.getAllImages(request);
 		return new ResponseEntity<List<String>>(gridFsFileList, HttpStatus.OK);
 	}
 	

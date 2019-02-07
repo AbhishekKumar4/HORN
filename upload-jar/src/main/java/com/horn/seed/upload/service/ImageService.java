@@ -3,6 +3,8 @@ package com.horn.seed.upload.service;
 import java.io.InputStream;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.data.mongodb.gridfs.GridFsResource;
 
 /**
@@ -12,5 +14,5 @@ import org.springframework.data.mongodb.gridfs.GridFsResource;
 public interface ImageService {	
 	public String uploadImage(InputStream inputStream);
 	public GridFsResource getImage(String id);
-	public List<String> getAllImages();
+	public List<String> getAllImages(HttpServletRequest request);
 }

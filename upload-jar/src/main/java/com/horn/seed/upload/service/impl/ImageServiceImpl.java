@@ -4,6 +4,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.gridfs.GridFsResource;
 import org.springframework.stereotype.Service;
@@ -36,13 +38,20 @@ public class ImageServiceImpl implements ImageService {
 	}
 
 	@Override
-	public List<String> getAllImages() {
-		List<String> listofIds = new ArrayList<String>();
+	public List<String> getAllImages(HttpServletRequest request) {
+		String contextPath = request.getContextPath();
+		String scheme = request.getScheme();
+		String serverName = request.getServerName();
+		String serverPort = Integer.toString(request.getServerPort());
+		String url = scheme + "://" + serverName + ":" + serverPort + contextPath + "/getImage?id=";
+		System.out.println("Print Url ::" + url);
+		List<String> listofUrls = new ArrayList<String>();
 		List<GridFSFile> gridFSFileList = imageRepository.getAllImages();
 		gridFSFileList.forEach(gridfsfile -> {
 			String id = gridfsfile.getObjectId().toHexString();
-			listofIds.add(id);
+			String imageUrl = url + id;
+			listofUrls.add(imageUrl);
 		});
-		return listofIds;
+		return listofUrls;
 	}
 }
