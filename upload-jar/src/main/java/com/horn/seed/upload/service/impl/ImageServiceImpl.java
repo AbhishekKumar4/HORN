@@ -40,7 +40,7 @@ public class ImageServiceImpl implements ImageService {
 		List<String> listofIds = new ArrayList<String>();
 		List<GridFSFile> gridFSFileList = imageRepository.getAllImages();
 		gridFSFileList.forEach(gridfsfile -> {
-			String id = gridfsfile.getId().asString().getValue();
+			String id = gridfsfile.getObjectId().toHexString();
 			listofIds.add(id);
 		});
 		return listofIds;
