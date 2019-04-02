@@ -16,5 +16,4 @@ public class UserController {
 		//Save details
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
-
 }
