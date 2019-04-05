@@ -1,5 +1,7 @@
 package com.horn.seed.user.service.impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.horn.seed.user.domain.User;
@@ -16,9 +18,14 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public User getUserDetails(String userId) {
-		User userDetails = userRepository.getUserDetails(userId);
-		return userDetails;
+	public User getUserDetails(Long userId) {
+		Optional<User> userDetails = userRepository.findById(userId);
+		if(userDetails.isPresent()) {
+			return userDetails.get();
+		}
+		else {
+			return null;
+		}
 	}
 
 }

@@ -4,5 +4,5 @@ import com.horn.seed.user.domain.User;
 
 public interface UserService {
 
-	public User getUserDetails(String userId);
+	public User getUserDetails(Long userId);
 }

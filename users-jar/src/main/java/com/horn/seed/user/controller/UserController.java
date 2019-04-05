@@ -25,7 +25,7 @@ public class UserController {
 	}
 
 	@GetMapping(name = "/getUserDetails")
-	public ResponseEntity<User> userDetails(@RequestParam String userId) {
+	public ResponseEntity<User> userDetails(@RequestParam Long userId) {
 		User user = userService.getUserDetails(userId);
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}

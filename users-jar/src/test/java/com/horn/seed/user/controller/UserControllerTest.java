@@ -29,11 +29,11 @@ public class UserControllerTest {
 	public void getUserDetailsTest() throws Exception {
 		
 		User userMock = new User();
-		userMock.setId("101");
+		userMock.setId(101L);
 		userMock.setEmail("something@email.com");
 		userMock.setName("abhishek");
 		
-		Mockito.when(userService.getUserDetails(Mockito.anyString())).thenReturn(userMock);
+		Mockito.when(userService.getUserDetails(Mockito.anyLong())).thenReturn(userMock);
 		
 		mockMvc.perform(MockMvcRequestBuilders.get("/getUserDetails?userId=101"))
 		.andExpect(MockMvcResultMatchers.status().isOk())

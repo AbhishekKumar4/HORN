@@ -1,5 +1,7 @@
 package com.horn.seed.user.service;
 
+import java.util.Optional;
+
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,12 +33,12 @@ public class UserServiceTest {
 	@Test
 	public void getUserDetailsTest() {
 		User userMock = new User();
-		userMock.setId("101");
+		userMock.setId(101L);
 		userMock.setEmail("something@email.com");
 		userMock.setName("abhishek");
 
-		Mockito.when(userRepository.getUserDetails(Mockito.anyString())).thenReturn(userMock);
-		User userDetails = userService.getUserDetails("userId");
+		Mockito.when(userRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(userMock));
+		User userDetails = userService.getUserDetails(101L);
 		Assertions.assertThat(userDetails.getName()).isEqualTo("abhishek");
 		Assertions.assertThat(userDetails.getEmail()).isEqualTo("something@email.com");
 
