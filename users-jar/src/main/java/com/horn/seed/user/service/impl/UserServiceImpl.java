@@ -11,21 +11,25 @@ import com.horn.seed.user.service.UserService;
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
-	
+
 	@Autowired
 	public UserServiceImpl(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
-	
+
 	@Override
 	public User getUserDetails(Long userId) {
 		Optional<User> userDetails = userRepository.findById(userId);
-		if(userDetails.isPresent()) {
+		if (userDetails.isPresent()) {
 			return userDetails.get();
-		}
-		else {
+		} else {
 			return null;
 		}
+	}
+
+	@Override
+	public void registerUser(User user) {
+		userRepository.save(user);
 	}
 
 }
