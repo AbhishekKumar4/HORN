@@ -1,5 +1,7 @@
 package com.horn.seed.user.repository;
 
+import java.util.Optional;
+
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,8 +19,8 @@ public class UserRepositoryTest {
 
 	@Test
 	public void getUserDetailsTest() throws Exception {
-		//User userDetails = userRepository.findById((long) 101);
-		//Assertions.assertThat(userDetails.getName()).isEqualTo("abhishek");
-		//Assertions.assertThat(userDetails.getEmail()).isEqualTo("something@email.com");
+		Optional<User> userDetails = userRepository.findById((long) 101);
+		Assertions.assertThat(userDetails.get().getName()).isEqualTo("abhishek");
+		Assertions.assertThat(userDetails.get().getEmail()).isEqualTo("something@email.com");
 	}
 }
