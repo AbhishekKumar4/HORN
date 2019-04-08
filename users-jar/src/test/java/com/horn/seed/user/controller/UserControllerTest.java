@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -28,9 +29,6 @@ public class UserControllerTest {
 	@Autowired
 	private MockMvc mockMvc;
 
-/*	@LocalServerPort
-	private int port;*/
-
 	@MockBean
 	private UserService userService;
 
@@ -44,8 +42,7 @@ public class UserControllerTest {
 
 		Mockito.when(userService.getUserDetails(Mockito.anyLong())).thenReturn(userMock);
 
-		mockMvc.perform(get("/getUserDetails?userId=101"))
-				.andExpect(status().isOk())
+		mockMvc.perform(get("/getUserDetails?userId=101")).andExpect(status().isOk())
 				.andExpect(jsonPath("name").value("abhishek"))
 				.andExpect(jsonPath("email").value("something@email.com"));
 	}
@@ -56,25 +53,19 @@ public class UserControllerTest {
 		user.setName("abhishek");
 		user.setEmail("something@email.com");
 
-		//HttpEntity<User> userHttpEntity = new HttpEntity<User>(user);
+		mockMvc.perform(post("/registerUser").contentType(MediaType.APPLICATION_JSON).content(asJsonString(user)))
+				.andExpect(status().isOk());
 
-		//UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder
-				//.fromHttpUrl("http://localhost:" + port + "/registerUser");
-		mockMvc.perform(post("/registerUser")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(asJsonString(user)))
-			   .andExpect(status().isOk());
-		
-		//Mockito.verify(userService, Mockito.times(1)).registerUser(user);
+		Mockito.verify(userService, Mockito.times(1)).registerUser(Mockito.any(User.class));
 	}
-	
+
 	public static String asJsonString(final Object obj) {
-	    try {
-	        final ObjectMapper mapper = new ObjectMapper();
-	        final String jsonContent = mapper.writeValueAsString(obj);
-	        return jsonContent;
-	    } catch (Exception e) {
-	        throw new RuntimeException(e);
-	    }
-	} 
+		try {
+			final ObjectMapper mapper = new ObjectMapper();
+			final String jsonContent = mapper.writeValueAsString(obj);
+			return jsonContent;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
 }
