@@ -3,11 +3,13 @@ package com.horn.seed.user.service.impl;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.horn.seed.user.domain.User;
 import com.horn.seed.user.repository.UserRepository;
 import com.horn.seed.user.service.UserService;
 
+@Service
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
