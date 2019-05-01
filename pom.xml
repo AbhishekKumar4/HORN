@@ -18,9 +18,9 @@
 	<description>HORN on spring boot</description>
 	
 	<modules>
-    	<module>upload-jar</module>
-    	<module>posts-jar</module>
-		<module>users-jar</module>
+    	<module>upload-service</module>
+    	<module>post-service</module>
+		<module>user-service</module>
     </modules>
     
     <properties>

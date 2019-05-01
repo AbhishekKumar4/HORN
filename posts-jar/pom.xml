@@ -10,10 +10,10 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	
-	<artifactId>posts-jar</artifactId>
+	<artifactId>post-service</artifactId>
 	<packaging>jar</packaging>
 
-	<name>posts-jar</name>
+	<name>post-service</name>
 	<description>HORN on spring boot</description>
 
 
