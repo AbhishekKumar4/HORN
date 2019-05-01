@@ -20,7 +20,6 @@
 	<modules>
     	<module>upload-jar</module>
     	<module>posts-jar</module>
-    	<module>commons</module>
 		<module>users-jar</module>
     </modules>
     
