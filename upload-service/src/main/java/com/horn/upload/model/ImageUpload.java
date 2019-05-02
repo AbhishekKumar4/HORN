@@ -1,4 +1,4 @@
-package com.horn.seed.model;
+package com.horn.upload.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

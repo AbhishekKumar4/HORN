@@ -1,4 +1,4 @@
-package com.horn.seed.upload.config;
+package com.horn.upload.config;
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class SwaggerConfig {
 	  public Docket api() {
 	    return new Docket(DocumentationType.SWAGGER_2)
 	      .select()
-	      .apis(RequestHandlerSelectors.basePackage("com.horn.seed.upload.controller"))
+	      .apis(RequestHandlerSelectors.basePackage("com.horn.upload.controller"))
 	      .paths(PathSelectors.any()).paths(Predicates.not(PathSelectors.regex("/error")))
 	      .build()
 	      .apiInfo(apiInfo());

@@ -1,4 +1,4 @@
-package com.horn.seed.upload.controller;
+package com.horn.upload.controller;
 
 import java.io.IOException;
 
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.horn.seed.model.AllImageUrls;
-import com.horn.seed.model.ImageUpload;
-import com.horn.seed.upload.service.ImageService;
+import com.horn.upload.model.AllImageUrls;
+import com.horn.upload.model.ImageUpload;
+import com.horn.upload.service.ImageService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

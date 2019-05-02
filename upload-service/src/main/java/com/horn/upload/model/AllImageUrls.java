@@ -1,4 +1,4 @@
-package com.horn.seed.model;
+package com.horn.upload.model;
 
 import java.util.List;
 

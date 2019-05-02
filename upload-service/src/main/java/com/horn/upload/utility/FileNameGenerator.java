@@ -1,4 +1,4 @@
-package com.horn.seed.upload.utility;
+package com.horn.upload.utility;
 
 import java.util.UUID;
 

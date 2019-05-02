@@ -1,4 +1,4 @@
-package com.horn.seed.upload.service.impl;
+package com.horn.upload.service.impl;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.gridfs.GridFsResource;
 import org.springframework.stereotype.Service;
 
-import com.horn.seed.upload.repository.ImageRepository;
-import com.horn.seed.upload.service.ImageService;
-import com.horn.seed.upload.utility.FileNameGenerator;
+import com.horn.upload.repository.ImageRepository;
+import com.horn.upload.service.ImageService;
+import com.horn.upload.utility.FileNameGenerator;
 import com.mongodb.client.gridfs.model.GridFSFile;
 
 /**

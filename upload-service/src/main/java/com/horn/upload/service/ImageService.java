@@ -1,4 +1,4 @@
-package com.horn.seed.upload.service;
+package com.horn.upload.service;
 
 import java.io.InputStream;
 import java.util.List;

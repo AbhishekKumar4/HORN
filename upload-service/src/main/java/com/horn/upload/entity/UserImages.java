@@ -1,3 +1,4 @@
+package com.horn.upload.entity;
 /*package com.horn.seed.upload.entity;
 
 import org.springframework.data.annotation.Id;

@@ -1,4 +1,4 @@
-package com.horn.seed.upload.repository.impl;
+package com.horn.upload.repository.impl;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.gridfs.GridFsResource;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.horn.seed.upload.repository.ImageRepository;
+import com.horn.upload.repository.ImageRepository;
 import com.mongodb.client.gridfs.GridFSBucket;
 import com.mongodb.client.gridfs.GridFSBuckets;
 import com.mongodb.client.gridfs.model.GridFSFile;

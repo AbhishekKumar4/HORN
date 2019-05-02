@@ -1,4 +1,4 @@
-package com.horn.seed.upload.config;
+package com.horn.upload.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
