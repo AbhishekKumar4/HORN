@@ -42,7 +42,7 @@ public class SwaggerConfig {
 	  private ApiInfo apiInfo() {
 	    ApiInfo apiInfo = new ApiInfo("Upload API",
 	      "Api for uploading post images", "1.0",
-	      "urn:tos", ApiInfo.DEFAULT_CONTACT, "com.horn.seed.upload", "", new ArrayList<>());
+	      "urn:tos", ApiInfo.DEFAULT_CONTACT, "com.horn.upload", "", new ArrayList<>());
 	    return apiInfo;
 	  }
 }

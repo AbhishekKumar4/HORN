@@ -39,9 +39,9 @@ public class SwaggerConfig {
 	 
 
 	  private ApiInfo apiInfo() {
-	    ApiInfo apiInfo = new ApiInfo("Upload API",
+	    ApiInfo apiInfo = new ApiInfo("User API",
 	      "Api for user service", "1.0",
-	      "urn:tos", ApiInfo.DEFAULT_CONTACT, "com.horn.seed.user", "", new ArrayList<>());
+	      "urn:tos", ApiInfo.DEFAULT_CONTACT, "com.horn.user", "", new ArrayList<>());
 	    return apiInfo;
 	  }
 }
