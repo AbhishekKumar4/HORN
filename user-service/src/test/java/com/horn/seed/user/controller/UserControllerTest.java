@@ -16,8 +16,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.horn.seed.user.domain.User;
-import com.horn.seed.user.service.UserService;
+import com.horn.user.controller.UserController;
+import com.horn.user.domain.User;
+import com.horn.user.service.UserService;
 
 @RunWith(SpringRunner.class)
 // Doesnot start entire spring boot application, only starts the needed

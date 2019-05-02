@@ -1,8 +1,8 @@
-package com.horn.seed.user.repository;
+package com.horn.user.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.horn.seed.user.domain.User;
+import com.horn.user.domain.User;
 
 public interface UserRepository extends CrudRepository<User, Long>{
 

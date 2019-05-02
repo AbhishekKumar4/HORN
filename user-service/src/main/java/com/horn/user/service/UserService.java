@@ -1,6 +1,6 @@
-package com.horn.seed.user.service;
+package com.horn.user.service;
 
-import com.horn.seed.user.domain.User;
+import com.horn.user.domain.User;
 
 public interface UserService {
 

@@ -13,7 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.horn.seed.user.domain.User;
+import com.horn.user.domain.User;
 
 
 @RunWith(SpringRunner.class)

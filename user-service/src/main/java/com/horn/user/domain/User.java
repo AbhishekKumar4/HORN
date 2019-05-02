@@ -1,4 +1,4 @@
-package com.horn.seed.user.domain;
+package com.horn.user.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

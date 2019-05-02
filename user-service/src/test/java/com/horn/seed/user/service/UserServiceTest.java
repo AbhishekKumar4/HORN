@@ -10,9 +10,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.horn.seed.user.domain.User;
-import com.horn.seed.user.repository.UserRepository;
-import com.horn.seed.user.service.impl.UserServiceImpl;
+import com.horn.user.domain.User;
+import com.horn.user.repository.UserRepository;
+import com.horn.user.service.UserService;
+import com.horn.user.service.impl.UserServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 // LIght weight unit test, so we are not going to invove spring in this because
