@@ -1,5 +1,7 @@
 <div class="container">
-      Username : <input type="text"/>
-      Password : <input type="password"/>
-      <input type="submit" (click) = onSubmit() value="login" class="btn btn-success">
+      Username : <input type="text" name = "username" [(ngModel)] = "username"/>
+      Password : <input type="password" name = "password" [(ngModel)] = "password"/>
+      <button (click) = onSubmit() class="btn btn-success">Login</button>
+      <br>
+      <small *ngIf='invalidLogin'>{{errorMessage}}</small>
 </div>
