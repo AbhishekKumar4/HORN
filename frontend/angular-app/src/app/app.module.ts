@@ -9,6 +9,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpModule } from '@angular/http'
+import { DummyService } from './service/dummy.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,11 @@ import { MenuComponent } from './menu/menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    HttpModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DummyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

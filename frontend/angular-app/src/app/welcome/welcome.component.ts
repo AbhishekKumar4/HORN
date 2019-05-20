@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DummyService } from 'src/app/service/dummy.service'
 
 @Component({
   selector: 'app-welcome',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  profile :any;
+  constructor(private service: DummyService) { }
 
   ngOnInit() {
+    console.log(this.service.findAllDepartment().subscribe(profile => this.profile = profile));
   }
 
 }
