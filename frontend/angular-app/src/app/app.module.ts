@@ -12,6 +12,8 @@ import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpModule } from '@angular/http'
 import { DummyService } from './service/dummy.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -27,8 +29,10 @@ import { DummyService } from './service/dummy.service';
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
+  schemas : [NO_ERRORS_SCHEMA],
   providers: [DummyService],
   bootstrap: [AppComponent]
 })
