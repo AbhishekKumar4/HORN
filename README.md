@@ -13,4 +13,13 @@ After signup/login user can :
 
 [Database](https://mlab.com/)
 
+# F.E problems
+1) You have to be inside an angular-cli project in order to use the serve command.
+Solution : Run command npm install -g @angular/cli
+2) If you get this error while executing command ng serve -> Could not find module "@angular-devkit/build-angular" from...
+Solution : npm install --save-dev @angular-devkit/build-angular
+
+
+
+
 
