@@ -20,6 +20,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 /*media all*/
+.auth-form {
+    margin: 0 auto;
+    width: 340px;
+}
+
+/*media all*/
+.px-3 {
+    padding-right: 16px !important;
+}
+
+
+
+/*media all*/
 .auth-form-body .input-block {
     margin-bottom: 15px;
     margin-top: 5px;
@@ -55,6 +68,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: block;
     text-align: center;
     width: 100%;
+}
+
+/*media all*/
+.session-authentication .auth-form-body {
+    border-radius: 5px;
+    border-top: 1px solid #d8dee2;
 }
 
 
