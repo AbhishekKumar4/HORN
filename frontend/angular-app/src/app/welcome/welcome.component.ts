@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DummyService } from 'src/app/service/dummy.service';
+import { Account } from '../model/Account';
 
 
 export interface Tile {
@@ -23,11 +24,12 @@ export class WelcomeComponent implements OnInit {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
-  profile :any;
+  photos :Array<Account>;
   constructor(private service: DummyService) { }
 
   ngOnInit() {
-    console.log(this.service.findAllDepartment().subscribe(profile => this.profile = profile));
+    this.photos = this.service.findAllPhotos();
+    console.log(this.service.findAllPhotos());
   }
 
 }
