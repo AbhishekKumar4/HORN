@@ -10,13 +10,23 @@
 </mat-grid-list>
 </div> -->
 
-<div>
+<!-- <div>
   <table>
     <tr *ngFor="let photo of photos">
         <td>
         <img src = "{{photo.url}}" style="width:200px;height:200px;overflow: auto;">
         </td>
-       <!--  //<h4>{{photo.url}}</h4> -->
+       <!--  //<h4>{{photo.url}}</h4> 
     </tr>
     </table>
+</div> -->
+
+<div>
+
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="photos">
+        <th mat-header-cell *matHeaderCellDef> Image Url </th>
+        <td mat-cell *matCellDef="let photo"> <img [src]="photo.imageUrl" /> </td>
+    </ng-container>  
+  </table>
 </div>
