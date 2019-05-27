@@ -24,6 +24,12 @@ export class WelcomeComponent implements OnInit {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
+  IMAGES = [
+    `https://material.angular.io/assets/img/examples/shiba2.jpg`,
+    `https://material.angular.io/assets/img/examples/shiba2.jpg`
+     ];
+
+  displayedColumns: string[] = ['images'];
   photos :Array<Account>;
   constructor(private service: DummyService) { }
 
