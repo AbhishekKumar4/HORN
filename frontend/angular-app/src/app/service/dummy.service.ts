@@ -7,22 +7,22 @@ import { Account } from 'src/app/model/Account';
 
 export const ACCOUNTS: Account[] = [
     {
-          id: 1, url: 'https://via.placeholder.com/600/92c952'
+          id: 1, url: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
     },
     {
-          id: 2, url: 'https://via.placeholder.com/600/92c952'
+          id: 2, url: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
     },
     {
-          id: 3, url: 'https://via.placeholder.com/600/92c952'
+          id: 3, url: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
     },
     {
-        id: 4, url: 'https://via.placeholder.com/600/92c952'
+        id: 4, url: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
   },
   {
-        id: 5, url: 'https://via.placeholder.com/600/92c952'
+        id: 5, url: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
   },
   {
-        id: 6, url: 'https://via.placeholder.com/600/92c952'
+        id: 6, url: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
   }
 ];
 

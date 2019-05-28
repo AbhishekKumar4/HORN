@@ -76,5 +76,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-top: 1px solid #d8dee2;
 }
 
+.example-card {
+    max-width: 400px;
+  }
 
 

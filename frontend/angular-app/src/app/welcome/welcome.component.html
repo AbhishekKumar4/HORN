@@ -22,14 +22,16 @@
 </div> -->
 
 <div>
+ <table>
+  <tr *ngFor="let photo of IMAGES">
+      <td>
+        <mat-card class="example-card">
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        </mat-card>
+      <!--<img src = "{{photo}}" > -->
+      </td>
+  </tr>
+</table>
 
-  <table mat-table [dataSource]="photos">
-    <ng-container matColumnDef="photos">
-        <th mat-header-cell *matHeaderCellDef> Image Url </th>
-        <td mat-cell *matCellDef="let photo"> {{photo}} </td>
-    </ng-container> 
-    
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
- <!--  modify this code -->
+
 </div>
