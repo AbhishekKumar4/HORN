@@ -23,10 +23,10 @@
 
 <div>
  <table>
-  <tr *ngFor="let photo of IMAGES">
+  <tr *ngFor="let photo of photos">
       <td>
         <mat-card class="example-card">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <img mat-card-image src="{{photo.url}}" alt="Photo of a Shiba Inu">
         </mat-card>
       <!--<img src = "{{photo}}" > -->
       </td>
