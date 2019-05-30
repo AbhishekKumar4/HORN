@@ -21,17 +21,28 @@
     </table>
 </div> -->
 
-<div>
+<!-- <div>
  <table>
   <tr *ngFor="let photo of photos">
       <td>
         <mat-card class="example-card">
           <img mat-card-image src="{{photo.url}}" alt="Photo of a Shiba Inu">
         </mat-card>
-      <!--<img src = "{{photo}}" > -->
+     <img src = "{{photo}}" > 
       </td>
   </tr>
 </table>
+</div> -->
+
+
+<div>
+<body>
+    <div layout="column" layout-wrap>
+      <md-card *ngFor="let photo of photos" flex>
+          <img mat-card-image src="{{photo.url}}" alt="Photo of a Shiba Inu">
+      </md-card>
+    </div>
+  </body>
 
 
 </div>
