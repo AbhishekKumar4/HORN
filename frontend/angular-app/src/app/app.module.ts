@@ -14,6 +14,7 @@ import { HttpModule } from '@angular/http'
 import { DummyService } from './service/dummy.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import {MatGridListModule} from  '@angular/material';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
     FormsModule,
     BrowserAnimationsModule
   ],
+  exports : [MatGridListModule],
   schemas : [NO_ERRORS_SCHEMA],
   providers: [DummyService],
   bootstrap: [AppComponent]
