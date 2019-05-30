@@ -35,7 +35,7 @@
 </div> -->
 
 
-<div>
+<!-- <div>
 <body>
     <div layout="column" layout-wrap>
       <md-card *ngFor="let photo of photos" flex>
@@ -43,6 +43,12 @@
       </md-card>
     </div>
   </body>
+</div> -->
 
 
-</div>
+    <mat-grid-list  cols="3" rowHeight="2:1">
+        <div *ngFor="let photo of photos">
+        <mat-grid-tile><img mat-card-image src="{{photo.url}}" alt="Photo of a Shiba Inu"></mat-grid-tile>
+      </div>
+    </mat-grid-list>
+

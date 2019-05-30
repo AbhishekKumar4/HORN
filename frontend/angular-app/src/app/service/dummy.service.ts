@@ -20,9 +20,6 @@ export const ACCOUNTS: Account[] = [
   },
   {
         id: 5, url: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
-  },
-  {
-        id: 6, url: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
   }
 ];
 
